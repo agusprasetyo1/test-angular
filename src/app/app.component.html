@@ -3,6 +3,7 @@
   <a class="nav-link tombol" (click)="toogleEditor('percobaan')">Percobaan</a>
   <a class="nav-link tombol" (click)="toogleEditor('formValidation')">Form Validation</a>
   <a class="nav-link tombol" (click)="toogleEditor('form')">Todo App</a>
+  <a class="nav-link tombol" (click)="toogleEditor('directive')">Directive</a>
 </nav>
 
 <div class="container" *ngIf="showModul3"> <!--Modul 3-->
@@ -14,10 +15,10 @@
     <div class="col-md-12">
       <!-- memanggil component { server element }  yang arraynya berada di app.component.ts -->
       <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement">
-        <!-- <p>
-          <strong *ngIf="element.type == 'server'" style="color:red">{{element.content}}</strong>
-          <em *ngIf="element.type == 'blueprint'">{{element.content}}</em>
-        </p> -->
+        <p>
+          <strong *ngIf="serverElement.type == 'server'" style="color:red">{{serverElement.content}}</strong>
+          <em *ngIf="serverElement.type == 'blueprint'">{{serverElement.content}}</em>
+        </p>
       </app-server-element>
     </div>
   </div>
@@ -33,6 +34,10 @@
 
 <div *ngIf="showForm"> <!--Form Todo-->
   <app-form-todo></app-form-todo>
+</div>
+
+<div *ngIf="showDirective"> <!--Form Todo-->
+  <app-directive-dasar></app-directive-dasar>
 </div>
 
 <span changeText></span>

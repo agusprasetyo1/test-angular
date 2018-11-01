@@ -9,6 +9,8 @@ import { ServerElementComponent } from './server-element/server-element.componen
 import { FormTodoComponent } from './form-todo/form-todo.component';
 import { PercobaanComponent } from './percobaan/percobaan.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
+import { DirectiveDasarComponent } from './directive-dasar/directive-dasar.component';
+import { BasicHighlightDirective } from './directive-dasar/basic-highlight.directive';
 //Pipe
 import { SortPipe } from './sort.pipe';
 import { PangkatPipe } from './pangkat.pipe';
@@ -22,7 +24,9 @@ import { PangkatPipe } from './pangkat.pipe';
     PercobaanComponent,
     SortPipe,
     PangkatPipe,
-    FormValidationComponent
+    FormValidationComponent,
+    DirectiveDasarComponent,
+    BasicHighlightDirective
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule

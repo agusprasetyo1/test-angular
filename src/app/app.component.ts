@@ -1,7 +1,7 @@
 //@ts-check
 import { Component } from '@angular/core';
 
-export type EditorType = 'modul3' | 'percobaan' | 'formValidation' | 'todoApp';
+export type EditorType = 'modul3' | 'percobaan' | 'formValidation' | 'todoApp' | 'directive';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ export type EditorType = 'modul3' | 'percobaan' | 'formValidation' | 'todoApp';
 })
 export class AppComponent {
   serverElements = [{ type: 'server', name : 'Test server', content: 'Just a test' }];
-  editor: EditorType = 'modul3';
+  editor: EditorType = 'directive';
   
   public get showModul3(){
     return this.editor === 'modul3';
@@ -26,6 +26,10 @@ export class AppComponent {
 
   public get showFormValidation() {
     return this.editor === 'formValidation';
+  }
+
+  public get showDirective() {
+    return this.editor === 'directive';
   }
   
   toogleEditor(type:EditorType){
