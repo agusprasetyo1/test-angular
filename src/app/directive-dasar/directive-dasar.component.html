@@ -6,25 +6,25 @@
       <div *ngIf="onlyOdd">
         <ul class="list-group">
           <li class="list-group-item" 
-          [ngClass]="{'odd': odd % 2 !== 0}"
           [ngStyle]="{'background-color': odd % 2 !== 0 ? 'yellow' : 'transparent'}"
           *ngFor="let odd of numbers">
           {{odd}}
+           <!-- ODD = ganjil -->
           </li>
         </ul>
       </div>
       <div *ngIf="!onlyOdd">
         <ul class="list-group">    
           <li class="list-group-item"
-          [ngClass]="{'odd': even % 2 !== 0}"
-          [ngStyle]="{'background-color': even % 2 !== 0 ? 'blue' : 'transparent'}"
+          [ngStyle]="{'background-color': even % 2 === 0 ? 'lightblue' : 'transparent'}"
           *ngFor="let even of numbers">
           {{ even }}
+          <!-- EVEN = genap -->
           </li>
         </ul>
-        <p appBasicHighlight>Only odd</p>
+        <br>
+        <p appBasicHighlight align="center">Only odd/Genap</p>
       </div>
     </div>
-    <!-- <p appBasicHighlight>asdasdas</p> -->
   </div>
 </div>
