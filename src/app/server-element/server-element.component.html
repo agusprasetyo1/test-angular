@@ -1,0 +1,27 @@
+<div class="card mt-2 mb-2">
+  <div class="card-header bg-primary text-white">
+    {{element.name}} <!-- element : event input pada server-element yang datanya dapat diambil pada komponen lain -->
+  </div>
+  <div class="card-body">
+    <p>
+      <strong *ngIf="element.type == 'server'" style="color:red">{{element.content}}</strong>
+      <em *ngIf="element.type == 'blueprint'">{{element.content}}</em>
+    </p>
+  </div>
+</div>
+<!-- <div class="card"> -->
+<!-- <div class="card-header bg-primary text-white">{{element.name}}</div> -->
+<!-- *ngIf="element.type === 'server';else dataElse" -->
+<!-- <ng-template #dataElse> -->
+<!-- <div class="card-header bg-danger text-white"> -->
+<!-- {{element.name}} </div> -->
+<!-- </ng-template> -->
+
+<!-- <div class="card-header" [ngClass]="{'bg-danger': element.type === 'blueprint'}"> {{element.name}} </div> -->
+<!-- <div class="card-body">
+    <p>
+      <strong *ngIf="element.type === 'server'" style="color: red"> {{element.content}}</strong>
+      <em *ngIf="element.type === 'blueprint'"> {{element.content}} </em>
+    </p>
+  </div>
+</div> -->

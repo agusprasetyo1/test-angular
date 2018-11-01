@@ -1,0 +1,44 @@
+<div class="container">
+  <select (change)="chooseMonth($event)">
+    <option *ngFor="let i of bulan" value="{{i}}">{{i}}</option>
+  </select>
+</div>
+
+<hr>
+
+<ng-container *ngIf="isValidation; else condition2">Condition is valid</ng-container>
+<!-- then thenTemplate -->
+<ng-template #condition1>
+  Condition is valid from template
+</ng-template>
+<ng-template #condition2>
+  Condition is invalid from template
+</ng-template>
+
+<button (click)="onClick()">Click me</button>
+
+<hr>
+<h3>Uppercase Pipe</h3>
+{{ title | uppercase }}
+<h3>Lowercase Pipe</h3>
+{{ title | lowercase }}
+<h3>Currency Pipe</h3>
+{{ 20000 | currency:"Rp"}} <br>
+{{ 20000 | currency:'USD':true}}
+<h3>Date Pipe</h3>
+{{ todayDate | date:"dd-MMMM-yyyy" }} <br>
+{{ todayDate | date:shortDate }}
+<h3>Decimal pipe</h3>
+{{ 454.78787814 | number:'3.2-2' }} <!-- 2 -2 adalah penginisialisasian data dibelakang koma -->
+<h3>Json File</h3>
+{{ jsonval | json }}
+<h3>Percent Pipe</h3>
+{{ 00.70 | percent }}
+<h3>Slice Pipe</h3>
+{{ bulan | slice:5:8 }}
+{{ day | date }}
+<h2>Implementation costum pipe</h2>
+{{number|sort:'asc'}} => Ascending <br>
+{{number|sort:'desc'}} => Descending <br>
+
+{{2 | pangkat:2}} => Perpangkatan

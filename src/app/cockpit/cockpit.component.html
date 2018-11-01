@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new blueprint or Blueprints !</p>
+    <label>Server name</label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerName" > => TWO DATA BINDING-->
+    <input type="text" class="form-control" #serverNameInput> <!--one data binding-->
+    <label>Server content</label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> => TWO DATA BINDING-->
+    <input type="text" class="form-control" #serverNameContent> <!--bisa digunakan untuk One Data Binding & @ViewChild-->
+    <div class="btn-group mt-2">
+      <button class="btn btn-primary" (click)="onAddServer(serverNameInput)">Add Server</button>
+      <button class="btn btn-info" (click)="onAddBlueprint(serverNameInput)">Add Server Blueprint</button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-xs-12">
+    <p>Add Servers or Blueprints</p>
+    <label for="serverN">Server Name</label>
+    <input type="text" id="serverN" class="form-control" [(ngModel)]="newServerName" placeholder="server name">
+    <label for="serverC">Server Content</label>
+    <input type="text" id="serverC" class="form-control" [(ngModel)]="newServerContent" placeholder="server content">
+
+    <br>
+    <div class="btn-group">
+      <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+      <button class="btn btn-dark" (click)="onAddBlueprint()">Add Server Blueprint</button>
+    </div>
+  </div>
+</div> -->
