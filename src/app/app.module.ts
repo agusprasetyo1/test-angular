@@ -14,6 +14,10 @@ import { BasicHighlightDirective } from './directive-dasar/basic-highlight.direc
 //Pipe
 import { SortPipe } from './sort.pipe';
 import { PangkatPipe } from './pangkat.pipe';
+//Directive
+import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
+import { BetterHighlight2Directive } from './better-highlight/better-highlight2.directive';
+import { UnlessDirective } from './unless/unless.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { PangkatPipe } from './pangkat.pipe';
     PangkatPipe,
     FormValidationComponent,
     DirectiveDasarComponent,
-    BasicHighlightDirective
+    BasicHighlightDirective,
+    BetterHighlightDirective,
+    BetterHighlight2Directive,
+    UnlessDirective
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule

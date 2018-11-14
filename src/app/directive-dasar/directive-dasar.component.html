@@ -1,29 +1,154 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+<div class="container mt-2">
+  <div class="row justify-content-center">
+    <!-- Directive Dasar & Renderer -->
+    <div class="col-md-3 text-center">
+      <h3>Directive Dasar & Renderer</h3>
+      <button class="btn btn-primary btn-block" (click)="onlyOdd1 = !onlyOdd1">Only show odd numbers</button>
       <br><br>
-      <div *ngIf="onlyOdd">
+      <div *ngIf="onlyOdd1">
         <ul class="list-group">
-          <li class="list-group-item" 
-          [ngStyle]="{'background-color': odd % 2 !== 0 ? 'yellow' : 'transparent'}"
-          *ngFor="let odd of numbers">
-          {{odd}}
-           <!-- ODD = ganjil -->
+          <li class="list-group-item" [ngStyle]="{'background-color': odd % 2 !== 0 ? 'yellow' : 'transparent'}" *ngFor="let odd of numbers">
+            {{odd}}
+            <!-- ODD = ganjil -->
           </li>
         </ul>
       </div>
-      <div *ngIf="!onlyOdd">
-        <ul class="list-group">    
-          <li class="list-group-item"
-          [ngStyle]="{'background-color': even % 2 === 0 ? 'lightblue' : 'transparent'}"
-          *ngFor="let even of numbers">
-          {{ even }}
-          <!-- EVEN = genap -->
+      <div *ngIf="!onlyOdd1">
+        <ul class="list-group">
+          <li class="list-group-item" [ngStyle]="{'background-color': even % 2 === 0 ? 'lightblue' : 'transparent'}"
+              *ngFor="let even of numbers">
+            {{ even }}
+            <!-- EVEN = genap -->
           </li>
         </ul>
         <br>
-        <p appBasicHighlight align="center">Only odd/Genap</p>
+        <p appBasicHighlight align="center" title="Directive dasar">Only odd/Genap</p>
+        <p appBetterHighlight title="Menggunakan renderer @HostBinding dan @HostListener">Style me with basic directive</p>
+      </div>
+    </div>
+
+
+    <!-- USER VALUE PADA CUSTOM BINDING -->
+    <div class="col-md-3 text-center">
+      <h3>User value pada directive</h3>
+      <button class="btn btn-primary btn-block" (click)="onlyOdd2 = !onlyOdd2">Only show odd numbers</button>
+      <br><br>
+      <div *ngIf="onlyOdd2">
+        <ul class="list-group">
+          <li class="list-group-item" [ngStyle]="{'background-color': odd % 2 !== 0 ? 'yellow' : 'transparent'}" *ngFor="let odd of numbers">
+            {{odd}}
+            <!-- ODD = ganjil -->
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="!onlyOdd2">
+        <ul class="list-group">
+          <li class="list-group-item" [ngStyle]="{'background-color': even % 2 === 0 ? 'lightblue' : 'transparent'}"
+              *ngFor="let even of numbers">
+            {{ even }}
+            <!-- EVEN = genap -->
+          </li>
+        </ul>
+        <br>
+        <p appBasicHighlight align="center" title="Directive dasar">Only odd/Genap</p>
+        <p appBetterHighlight2 [defaultColor]="'yellow'" [highlightColor]="'red'" title="Merubah value dengan menggunakan 'costum property binding'">Style
+          me with basic directive</p>
+      </div>
+    </div>
+
+    <!-- COSTUM STRUCTURE DIRECTIVE -->
+    <div class="col-md 3 text-center">
+      <h3>Custom Structure Directive</h3>
+      <button class="btn btn-primary btn-block" (click)="onlyOdd3 = !onlyOdd3">Only show odd numbers</button>
+      <br><br>
+      <div *ngIf="onlyOdd3">
+        <ul class="list-group">
+          <li class="list-group-item" [ngStyle]="{'background-color': odd % 2 !== 0 ? 'yellow' : 'transparent'}" *ngFor="let odd of numbers">
+            {{odd}}
+            <!-- ODD = ganjil -->
+          </li>
+        </ul>
+        <br>
+      </div>
+      <!-- Memanipulasi menggunakan cara lama -->
+
+      <!-- <div *ngIf="!onlyOdd3">
+        <ul class="list-group">
+          <li class="list-group-item" [ngStyle]="{'background-color': even % 2 === 0 ? 'lightblue' : 'transparent'}"
+              *ngFor="let even of numbers">
+            {{ even }} -->
+      <!-- EVEN = genap -->
+      <!-- </li>
+        </ul>
+        <br>
+      </div> -->
+
+      <!--  -->
+
+      <!-- Manipulasi IF sebagai DOM -->
+
+      <!-- <ng-template [ngIf]="!onlyOdd3">
+        <ul class="list-group">
+          <li class="list-group-item" [ngStyle]="{'background-color': even % 2 === 0 ? 'lightblue' : 'transparent'}"
+              *ngFor="let even of numbers">
+            {{ even }} -->
+      <!-- EVEN = genap -->
+      <!-- </li>
+        </ul>
+      </ng-template> -->
+
+      <!--  -->
+
+      <div *appUnless="onlyOdd3">
+        <ul class="list-group">
+          <li class="list-group-item" [ngStyle]="{'background-color': even % 2 === 0 ? 'lightgreen' : 'transparent'}"
+              *ngFor="let even of numbers">
+            <!-- EVEN = genap -->
+            {{ even }}
+          </li>
+        </ul>
+        <br>
+        <p appBasicHighlight align="center" title="Directive dasar">Only odd/Genap</p>
+        <p appBetterHighlight2 [defaultColor]="'yellow'" [highlightColor]="'red'" title="Merubah value dengan menggunakan 'costum property binding'">Style
+          me with basic directive</p>
+      </div>
+    </div>
+
+
+    <!-- MENGGUNAKAN ngSwitch -->
+    <div class="col-md 3 text-center">
+      <h3>Menggunakan ngSwitch</h3>
+      <button class="btn btn-primary btn-block" (click)="onlyOdd4 = !onlyOdd4">Only show odd numbers</button>
+      <br><br>
+      <div *ngIf="onlyOdd4">
+        <ul class="list-group">
+          <li class="list-group-item" [ngStyle]="{'background-color': odd % 2 !== 0 ? 'yellow' : 'transparent'}" *ngFor="let odd of numbers">
+            {{odd}}
+            <!-- ODD = ganjil -->
+          </li>
+        </ul>
+        <br>
+      </div>
+      <div *appUnless="onlyOdd4">
+        <ul class="list-group">
+          <li class="list-group-item" [ngStyle]="{'background-color': even % 2 === 0 ? 'pink' : 'transparent'}" *ngFor="let even of numbers">
+            <!-- EVEN = genap -->
+            {{ even }}
+          </li>
+        </ul>
+        <br>
+        <p appBasicHighlight align="center" title="Directive dasar">Only odd/Genap</p>
+        <p appBetterHighlight2 [defaultColor]="'yellow'" [highlightColor]="'red'" title="Merubah value dengan menggunakan 'costum property binding'">Style
+          me with basic directive</p>
+      </div>
+      <!-- 
+			  Template akan dirubah sesuai nilai dari property value menggunakan ngSwitch
+			-->
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="100">Value is 100</p>
+        <p *ngSwitchDefault>Value is Default</p>
       </div>
     </div>
   </div>

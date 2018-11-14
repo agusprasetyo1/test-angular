@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveDasarComponent implements OnInit {
   numbers = [1, 2, 3, 4, 5];
-  onlyOdd = false;
-  
-  constructor() { }
+  onlyOdd1 = false;
+  onlyOdd2 = false;
+  onlyOdd3 = false;
+  onlyOdd4 = false;
+  value = '10';
 
-  ngOnInit() {
-  }
+  constructor() {}
 
+  ngOnInit() {}
 }

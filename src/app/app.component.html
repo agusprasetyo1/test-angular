@@ -1,4 +1,4 @@
-<nav class="nav justify-content-center">  
+<nav class="nav justify-content-center">
   <a class="nav-link tombol" (click)="toogleEditor('modul3')">Modul 3</a>
   <a class="nav-link tombol" (click)="toogleEditor('percobaan')">Percobaan</a>
   <a class="nav-link tombol" (click)="toogleEditor('formValidation')">Form Validation</a>
@@ -6,7 +6,8 @@
   <a class="nav-link tombol" (click)="toogleEditor('directive')">Directive</a>
 </nav>
 
-<div class="container" *ngIf="showModul3"> <!--Modul 3-->
+<div class="container" *ngIf="showModul3">
+  <!--Modul 3-->
   <!-- Memanggil component { cockpit } dan memanggil event serverCreated & bpCreated yang terdapat di cockpit -->
   <!-- event tersebut kemudian dimasukan kedalam property onServerAdded & onBlueprintAdded yang merupakan method APP -->
   <app-cockpit (serverCreated)="onServerAdded($event)" (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
@@ -24,20 +25,27 @@
   </div>
 </div>
 
-<div *ngIf="showPercobaan"> <!--Percobaan-->
+<div *ngIf="showPercobaan">
+  <!--Percobaan-->
   <app-percobaan></app-percobaan>
 </div>
 
-<div *ngIf="showFormValidation"> <!--Percobaan-->
+<div *ngIf="showFormValidation">
+  <!--Percobaan-->
   <app-form-validation></app-form-validation>
 </div>
 
-<div *ngIf="showForm"> <!--Form Todo-->
+<div *ngIf="showForm">
+  <!--Form Todo-->
   <app-form-todo></app-form-todo>
 </div>
 
-<div *ngIf="showDirective"> <!--Form Todo-->
-  <app-directive-dasar></app-directive-dasar>
-</div>
+<div *ngIf="showDirective">
+  <!--Form Todo-->
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+         <app-directive-dasar></app-directive-dasar>
+      </div>
+    </div>
+  </div>
 
-<span changeText></span>
